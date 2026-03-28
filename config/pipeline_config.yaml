@@ -1,0 +1,44 @@
+database:
+  host: localhost
+  port: 5432
+  name: fastfeast_dw
+  user: pipeline_user
+  password: ${DB_PASSWORD}
+  pool_size: 5
+  connect_retries: 3
+  connect_retry_delay_sec: 2
+
+paths:
+  batch_dir: data/input/batch
+  stream_dir: data/input/stream
+  quarantine_dir: data/quarantine
+  log_dir: logs
+  file_tracker_db: file_tracker.db
+
+pipeline:
+  stream_poll_interval_sec: 30
+  batch_threads: 4
+  stream_threads: 2
+
+sla:
+  first_response_minutes: 1
+  resolution_minutes: 15
+
+thresholds:
+  max_orphan_rate: 0.05
+  max_null_rate: 0.10
+
+alerts:
+  enabled: false
+  smtp_host: smtp.gmail.com
+  smtp_port: 587
+  use_tls: true
+  sender_email: ${ALERT_EMAIL}
+  sender_password: ${ALERT_PASSWORD}
+  recipients:
+    - eng.ayman.kamel.ali@gmail.com
+
+logging:
+  level: INFO
+  max_bytes: 10485760
+  backup_count: 5

@@ -1,0 +1,27 @@
+# Environment
+.env
+
+# Data (generated, not committed)
+data/master/
+data/input/
+data/quarantine/
+
+# Logs
+logs/
+
+# SQLite tracker
+*.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
