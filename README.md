@@ -289,7 +289,3 @@ All values in `config/pipeline_config.yaml`. Key settings:
 | `alerts.enabled` | `true` | Set to `false` to disable email alerts |
 
 ---
-
-## Team
-
-Project deadline: **April 2, 2026 at 00:00:00**
